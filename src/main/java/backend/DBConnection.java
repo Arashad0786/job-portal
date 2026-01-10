@@ -16,7 +16,7 @@ public class DBConnection {
     static {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal","root","44@@");
+             con=DriverManager.getConnection("jdbc:mysql://containers-us-west-XX.railway.app:6543/jobportal","root","44@@");
         }
         catch(Exception e){
             System.out.print(e);
