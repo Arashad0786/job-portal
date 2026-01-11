@@ -15,8 +15,10 @@ public class DBConnection {
    static  Connection con;
     static {
         try{
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal","root","44@@");
             Class.forName("com.mysql.cj.jdbc.Driver");
-             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal","root","44@@");
+             con=DriverManager.getConnection("mysql://root:dRtSzHvDsuQLkrHRXRDRbQwnCZgPQHMK@mysql.railway.internal:3306/railway","root","dRtSzHvDsuQLkrHRXRDRbQwnCZgPQHMK");
         }
         catch(Exception e){
             System.out.print(e);
