@@ -18,10 +18,10 @@ public class DBConnection {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
              con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal","root","44@@");
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//
-//             con=DriverManager.getConnection("jdbc:mysql://root:dRtSzHvDsuQLkrHRXRDRbQwnCZgPQHMK@mysql.railway.internal:3306/railway","root","dRtSzHvDsuQLkrHRXRDRbQwnCZgPQHMK");
-//=======
+//            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+             con=DriverManager.getConnection("\"jdbc:mysql://HOST:PORT/sql8814115?useSSL=false\"","sql8814115","W2gkN9LJN6");
+//            
         }
            
         catch(Exception e){
