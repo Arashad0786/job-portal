@@ -12,7 +12,7 @@ import java.sql.DriverManager;
  * @author arash
  */
 public class DBConnection {
-    static Connection con;
+    static Connection con=null;
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,13 +27,16 @@ public class DBConnection {
                 // FIXED: Removed extra quotes and placeholders. You must replace HOST:PORT with
                 // actual values or set DB_URL env var.
                 // Assuming localhost for fallback if not specified.
-                url = "jdbc:mysql://localhost:3306/sql8814115?useSSL=false&allowPublicKeyRetrieval=true";
+//                url = "jdbc:mysql://localhost:3306/sql8814115?useSSL=false&allowPublicKeyRetrieval=true";
+                    url="jdbc:mysql://localhost:3306/jobportal";
             }
             if (user == null || user.isEmpty()) {
-                user = "sql8814115";
+//                user = "sql8814115";
+                  user="root";
             }
             if (password == null || password.isEmpty()) {
-                password = "W2gkN9LJN6";
+//                password = "W2gkN9LJN6";
+                  password="44@@";
             }
 
             con = DriverManager.getConnection(url, user, password);

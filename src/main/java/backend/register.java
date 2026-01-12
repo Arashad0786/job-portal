@@ -69,7 +69,7 @@ public class register extends HttpServlet{
          
         }
         catch(Exception e){
-            out.print(e);
+            e.printStackTrace();
         }
     }
     
