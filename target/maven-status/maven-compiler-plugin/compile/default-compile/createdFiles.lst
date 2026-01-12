@@ -7,6 +7,7 @@ backend\deleteProfileEducationDetails.class
 backend\checkCookie.class
 backend\addExperienceDetails.class
 backend\ValidationFilter.class
+backend\HealthServlet.class
 backend\SimpleJobSearch.class
 backend\EditProfileAbout.class
 backend\downloadresume.class
