@@ -6,29 +6,43 @@ package backend;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 /**
  *
  * @author arash
  */
 public class DBConnection {
-   static  Connection con;
+    static Connection con;
     static {
-        try{
-//           
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-             con=DriverManager.getConnection("\"jdbc:mysql://HOST:PORT/sql8814115?useSSL=false\"","sql8814115","W2gkN9LJN6");
-//            
-        }
-           
-        catch(Exception e){
-            System.out.print(e);
+
+            // Use Environment Variables for security and flexibility (Render compatible)
+            String url = System.getenv("DB_URL");
+            String user = System.getenv("DB_USER");
+            String password = System.getenv("DB_PASSWORD");
+
+            // Fallbacks for local development or if Env Vars are missing
+            if (url == null || url.isEmpty()) {
+                // FIXED: Removed extra quotes and placeholders. You must replace HOST:PORT with
+                // actual values or set DB_URL env var.
+                // Assuming localhost for fallback if not specified.
+                url = "jdbc:mysql://localhost:3306/sql8814115?useSSL=false&allowPublicKeyRetrieval=true";
+            }
+            if (user == null || user.isEmpty()) {
+                user = "sql8814115";
+            }
+            if (password == null || password.isEmpty()) {
+                password = "W2gkN9LJN6";
+            }
+
+            con = DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
-    
-    public  static  Connection getConnect(){
+
+    public static Connection getConnect() {
         return con;
     }
-    
 }
